@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/VisualArtwork" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta itemprop="artform" content="Website">
+    <meta itemprop="interactivityType" content="mixed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="Homage to the rainbow flag. Website + domain name, 2017.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@ACJ">
+    <meta name="twitter:description" content="Homage to the rainbow flag. Website + domain name, 2017.">
+    <meta name="twitter:image" content="https://gaydients.com/image.jpg">
+    <meta name="twitter:title" content="Gaydients">
+    <meta property="fb:admins" content="509248955">
+    <meta property="fb:app_id" content="199274310096963">
+    <meta property="og:description" content="Homage to the rainbow flag. Website + domain name, 2017.">
+    <meta property="og:image" content="https://gaydients.com/image.jpg">
+    <meta property="og:image:height" content="768">
+    <meta property="og:image:width" content="1366">
+    <meta property="og:title" content="Gaydients">
+    <meta property="og:url" content="https://gaydients.com/">
+    <title itemprop="name">Gaydients</title>
+    <link rel="apple-touch-icon-precomposed" href="https://gaydients.com/apple-touch-icon-precomposed.png">
+    <link rel="author" href="https://alexanderchristiaanjacob.com/">
+    <link rel="canonical" href="https://gaydients.com/">
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+            outline: 0;
+            padding: 0;
+        }
+
+        body {
+            background: red;
+            background: linear-gradient(to right,
+                #f00000 0%,
+                #ff8000 20%,
+                #ffff00 40%,
+                #007940 60%,
+                #4040ff 80%,
+                #a000c0 100%);
+            min-height: 100%;
+        }
+
+        html {
+            height: 100%;
+        }
+    </style>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-6227584-61', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+<body id="main">
+<script>
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var main = document.getElementById('main');
+        var action = (('ontouchstart' in window) || (window.DocumentTouch && document instanceof DocumentTouch)) ? 'touchstart' : 'click';
+        main.addEventListener(action, renderGaydient, false);
+    });
+
+    function renderGaydient() {
+        var main = document.getElementById('main');
+        var seed = Math.random();
+        var type = 'linear';
+        var direction = '';
+        var colors = ['#f00000', '#ff8000', '#ffff00', '#007940', '#4040ff', '#a000c0'];
+        var breakpoints = [
+            0,
+            Math.round(Math.random() * 20 + 10),
+            Math.round(Math.random() * 20 + 30),
+            Math.round(Math.random() * 20 + 50),
+            Math.round(Math.random() * 20 + 70),
+            100
+        ];
+        var gaydient;
+
+        if(seed > .75) {
+            type = 'radial';
+            direction = 'circle';
+        } else if(seed > .50) {
+            direction = 'to right';
+        } else if(seed > .25) {
+            direction = 'to bottom';
+        } else {
+            direction = 'to bottom right';
+        }
+
+        gaydient = type + '-gradient(' + direction + ','
+            + colors[0] + ' ' + breakpoints[0] + '%,'
+            + colors[1] + ' ' + breakpoints[1] + '%,'
+            + colors[2] + ' ' + breakpoints[2] + '%,'
+            + colors[3] + ' ' + breakpoints[3] + '%,'
+            + colors[4] + ' ' + breakpoints[4] + '%,'
+            + colors[5] + ' ' + breakpoints[5] + '%)';
+
+        main.style.backgroundImage = gaydient;
+    }
+
+</script>
+</body>
+</html>
