@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "version": "20190803",
+    "name": "Gaydients",
+    "default_locale": "en",
+    "description": "Homage to the rainbow flag. Website + domain name, 2017.",
+    "author": "Alexander Christiaan Jacob",
+    "theme_color": "#ff0000",
+    "homepage_url": "https://gaydients.com/",
+    "start_url": "https://gaydients.com/",
+    "icons": [
+        {
+            "src": "https://gaydients.com/apple-touch-icon-precomposed.png"
+        }
+    ],
+    "display": "fullscreen"
+}
